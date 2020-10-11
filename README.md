@@ -58,7 +58,7 @@ Topics covered for methods include:
 
 <!-- Results -->
 ## Results
-### Multiple Linear Regression
+### Multiple_Linear_Regression
 After checking the no multicollinearity assumption and removing the highly correlated variables from the multiple linear regression model, we found that the only statistically significant coefficients were those for the population density and number of airports predictor variables. As expected, the coefficients for population density and number of airports were positive (21.4757 and 12.5072) for the model predicting COVID-19 cases and were positive (0.7089 and 0.3736) for the model predicting COVID-19 deaths. As population density increases, there are likely more cumulative interactions between humans, and as a result, the transmission of the virus from the infected to the susceptible is easier, increasing the number of COVID-19 cases and potential deaths. Similarly, as the number of airports increases, the amount of interstate travel in the U.S. increases, so it is more likely that someone from New York (a state with the most COVID-19 cases and deaths) comes into contact with someone from Alaska (a state with only a few hundred COVID-19 cases). Thus, the transmission of the virus becomes easier, increasing the number of COVID-19 cases and potential deaths. After checking the linearity and normality assumptions, the only variable left was the number of airports. The number of airports was the only predictor variable that satisfied the three assumptions.
 
 ### Naive_Beta_Estimation
