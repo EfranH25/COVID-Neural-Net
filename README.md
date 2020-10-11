@@ -14,7 +14,6 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-
 * [Abstract](#Abstract)
 * [Introduction](#Introduction)
 * [Methods](#Methods)
@@ -24,8 +23,6 @@
   * [Basic_SIR_Model](#Basic_SIR_Model)
   * [Neural_Nets](#Neural_Nets)
   * [Our_SIR_Model](#Our_SIR_Model)
-    * [Simulation](#Simulation)
-    * [Beta_Estimation](#Beta_Estimation)
 * [Issues_and_Summary](#Issues_and_Summary)
 * [Contact](#contact)
 
@@ -92,6 +89,9 @@ We will outline a few potential issues that need to be resolved so that our mode
 While our model does have some issues, it was still helpful in making some significant findings. Through our regression model, we were able to find that the number of airports and population density supposedly play an important role in predicting the number of deaths and total cases due to COVID-19. We also found that neural nets have a lot of potential to be useful in forecasting COVID-19. Through our own SIR model, we found that compared with a basic SIR model, our model shows jumps in the infection curve as a new population is infected. 
 The main limitation for our SIR model was the inaccuracy of our neural nets. For future models, we will have to reconfigure our neural nets in order to fully explore the SIR model. Moving forward, we will estimate the infection and recovery rates for the model with our current neural nets and compare to real world outcomes. We will also create a secondary model that uses actual data provided by state databases to create another SIR model based on real world values instead of predicted values. 
 As the world continues to fight against the COVID-19 pandemic, reliable statistical models are needed to accurately predict the spread of infection. Accurate predictions will help inform world leaders to make the proper decisions for their respective country. With the improvements listed, our hope is that the model we created can be useful in aiding in the fight against COVID-19.
+
+<!-- Final Model -->
+## Final Model
 
 <!-- CONTACT -->
 ## Contact
