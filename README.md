@@ -18,9 +18,9 @@
 * [Introduction](#Introduction)
 * [Methods](#Methods)
 * [Results](#Results)
-  * [Regression](#Multiple_Linear_Regression)
-  * [Estimation](#Naive_Beta_Estimation)
-  * [Basic SIR Model](#Basic_SIR_Model)
+  * [Multiple_Linear_Regression](#Multiple_Linear_Regression)
+  * [Naive_Beta_Estimation](#Naive_Beta_Estimation)
+  * [Basic_SIR_Model](#Basic_SIR_Model)
   * [Neural_Nets](#Neural_Nets)
   * [Our_SIR_Model](#Our_SIR_Model)
 * [Issues_and_Summary](#Issues_and_Summary)
@@ -61,7 +61,7 @@ Topics covered for methods include:
 ### Multiple Linear Regression
 After checking the no multicollinearity assumption and removing the highly correlated variables from the multiple linear regression model, we found that the only statistically significant coefficients were those for the population density and number of airports predictor variables. As expected, the coefficients for population density and number of airports were positive (21.4757 and 12.5072) for the model predicting COVID-19 cases and were positive (0.7089 and 0.3736) for the model predicting COVID-19 deaths. As population density increases, there are likely more cumulative interactions between humans, and as a result, the transmission of the virus from the infected to the susceptible is easier, increasing the number of COVID-19 cases and potential deaths. Similarly, as the number of airports increases, the amount of interstate travel in the U.S. increases, so it is more likely that someone from New York (a state with the most COVID-19 cases and deaths) comes into contact with someone from Alaska (a state with only a few hundred COVID-19 cases). Thus, the transmission of the virus becomes easier, increasing the number of COVID-19 cases and potential deaths. After checking the linearity and normality assumptions, the only variable left was the number of airports. The number of airports was the only predictor variable that satisfied the three assumptions.
 
-### Naive Beta Estimation
+### Naive_Beta_Estimation
 We took a somewhat Bayesian approach was taken for estimating Beta using our model.
 
 Firstly, there is the problem of estimating the true data (susceptible, infected, etc) given the reported data. Given the true data, the reported would follow a hypergeometric distribution, and so the distribution of the true given the reported can be expected to follow a negative hypergeometric distribution. For ease of computation this was approximated by negative binomial distributions instead, which is accurate in the limit of a large unexposed population.
@@ -72,26 +72,23 @@ What was then needed was to calculate the likelihood of the data given the diffe
 
 After normalization this produced a distribution over Beta, from which the mean and standard deviation could be extracted.
 
-### Basic SIR Model
+### Basic_SIR_Model
 After omitting the dynamics of birth and death from our basic SIR model, we found that the basic SIR model was able to predict the parameters for the United States more accurately. Our model predicted a beta (the infection rate of the disease) value of 0.1496 and a gamma (the recovery rate) value of 0.002533. Our gamma value seems to be an underestimate, which is most likely because of the sparsity of recovery rate data. Due to our gamma value being lower than expected, the model produced a reproduction rate ($R_0$) of approximately 59.078, which is approximately ten times higher than it should be.
 
-### Neural Nets
+### Neural_Nets
 Our initial plan was to perform predictions for several time frames to get an idea of the rate of infection and rate of deaths per state to then feed into our SIR model. Unfortunately, after some initial training runs, we encountered a major roadblock: the predicted values in our trained neural nets had extremely high residuals. We encountered residuals as high as 18,000 for the mean absolute error for estimated positive cases, and these high residuals prevented us from proceeding further onto our final goal of estimated infection and death rates. We tried different approaches to optimizing our neural nets, most of them by trial and error and cycling from different iterations ranging from models with very few nodes with only one hidden neural net cluster to hundreds of nodes with multiple hidden clusters. Eventually, after these iterations were performed, we found a neural net with one hidden cluster and a moderate number of nodes, 64 per cluster, to be acceptable because it allowed us to reduce our residuals to around 5,900 with a testing training split of 80/20. We found this residual to be acceptable because we realized that many states in the U.S. had been under-testing their populations, so the true number of actual cases was likely much higher than reported. Unfortunately, by the time we realized this, our presentation deadline was approaching, so instead of refining our model even further to eventually predict the infection rate and deaths, we instead proceeded to focus our attention in completing our SIR model. 
 
-### Our SIR Model
+### Our_SIR_Model
 Please view the full paper on the GitHub page to view our model. (Again, unfortunately GitHub made it difficult to post our results on the ReadMe) 
 
 Link: [Full Paper](https://github.com/EfranH25/COVID-Neural-Net/blob/master/COVID%2019%20Forecasting%20Report.pdf)
 
 <!-- Issues and Summary -->
-## Issues and Summary
+## Issues_and_Summary
 We will outline a few potential issues that need to be resolved so that our model can be more accurate. The first issue we will discuss is that our model does not account for many of the factors that contribute to the spread of COVID-19, such as the effects of social distancing. Secondly, we found that multiple linear regression does not work well for COVID-19 forecasting. A potential solution would be to use logistic regression with a binary variable for survival/death from COVID-19. Lastly, in order to have an accurate model, we need reliable data. The data we collected were from various reliable sources. A background check on the data and how it was collected could help improve our model. 
 While our model does have some issues, it was still helpful in making some significant findings. Through our regression model, we were able to find that the number of airports and population density supposedly play an important role in predicting the number of deaths and total cases due to COVID-19. We also found that neural nets have a lot of potential to be useful in forecasting COVID-19. Through our own SIR model, we found that compared with a basic SIR model, our model shows jumps in the infection curve as a new population is infected. 
 The main limitation for our SIR model was the inaccuracy of our neural nets. For future models, we will have to reconfigure our neural nets in order to fully explore the SIR model. Moving forward, we will estimate the infection and recovery rates for the model with our current neural nets and compare to real world outcomes. We will also create a secondary model that uses actual data provided by state databases to create another SIR model based on real world values instead of predicted values. 
 As the world continues to fight against the COVID-19 pandemic, reliable statistical models are needed to accurately predict the spread of infection. Accurate predictions will help inform world leaders to make the proper decisions for their respective country. With the improvements listed, our hope is that the model we created can be useful in aiding in the fight against COVID-19.
-
-<!-- Final Model -->
-## Final Model
 
 <!-- CONTACT -->
 ## Contact
