@@ -18,9 +18,9 @@
 * [Introduction](#Introduction)
 * [Methods](#Methods)
 * [Results](#Results)
-  * [Multiple_Linear_Regression](#Multiple_Linear_Regression)
-  * [Naive_Beta_Estimation](#Naive_Beta_Estimation)
-  * [Basic_SIR_Model](#Basic_SIR_Model)
+  * [Regression](#Multiple_Linear_Regression)
+  * [Estimation](#Naive_Beta_Estimation)
+  * [Basic SIR Model](#Basic_SIR_Model)
   * [Neural_Nets](#Neural_Nets)
   * [Our_SIR_Model](#Our_SIR_Model)
 * [Issues_and_Summary](#Issues_and_Summary)
@@ -72,7 +72,7 @@ What was then needed was to calculate the likelihood of the data given the diffe
 
 After normalization this produced a distribution over Beta, from which the mean and standard deviation could be extracted.
 
-### Basic SIR_Model
+### Basic SIR Model
 After omitting the dynamics of birth and death from our basic SIR model, we found that the basic SIR model was able to predict the parameters for the United States more accurately. Our model predicted a beta (the infection rate of the disease) value of 0.1496 and a gamma (the recovery rate) value of 0.002533. Our gamma value seems to be an underestimate, which is most likely because of the sparsity of recovery rate data. Due to our gamma value being lower than expected, the model produced a reproduction rate ($R_0$) of approximately 59.078, which is approximately ten times higher than it should be.
 
 ### Neural Nets
