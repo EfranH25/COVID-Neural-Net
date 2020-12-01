@@ -1,7 +1,9 @@
 <br />
 <p align="center">
   <h3 align="center">COVID-19 Forecasting Project</h3>
-
+  <p align="center">
+    <img width="400" height="180" src="https://github.com/EfranH25/COVID-Neural-Net/blob/master/logo.png">
+</p>
   <p align="center">
     This project attempts to forecast COVID-19 sate outcomes through a machine learning SIR model. Unfortuntely due to insufficent data and scheduling conflicts the project never came to full fruition. Regardless, it was an excellent learning experince to get aquainted with data collection, Neural Nets and Forecasting. Because of this, I thought it would be useful to put my experience and the process on GitHub.
     <br />
